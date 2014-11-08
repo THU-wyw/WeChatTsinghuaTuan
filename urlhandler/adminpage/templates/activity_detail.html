@@ -78,36 +78,31 @@
         <noscript>请开启JavaScript后重试。</noscript>
     </div>
     <div class="container" id="detail-form" style="display: none;">
+        <div class="panel panel-default">
+        <div class="panel-heading">活动信息</div>
+        <div class="panel-body">
         <form class="form-horizontal" role="form" method="post" action="{% url "adminpage.views.activity_post" %}" id="activity-form">
             {% csrf_token %}
             <div class="form-group">
                 <label for="input-name" class="col-sm-2 control-label" id="label-input-name">活动名称</label>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
                     <input type="text" maxlength="26" name="name" class="form-control" id="input-name" placeholder="活动名称，如 马兰花开" autofocus>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="input-key" class="col-sm-2 control-label">活动代称</label>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
                     <input type="text" maxlength="12" name="key" class="form-control" id="input-key" placeholder="用户用于订票的活动代称，推荐使用中文(少于7个字)，如 马兰花开">
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="input-place" class="col-sm-2 control-label">活动地点</label>
-                <div class="col-sm-10">
+                <div class="col-sm-3">
                     <input type="text" name="place" class="form-control" id="input-place" placeholder="活动地点，如 大礼堂">
                 </div>
             </div>
-
-            <div class="form-group">
-                <label for="input-description" class="col-sm-2 control-label">活动简介</label>
-                <div class="col-sm-10">
-                    <textarea class="form-control" name="description" rows="3" id="input-description" placeholder="描述，如 好看的舞台剧" row="3" style="resize: none;"></textarea>
-                </div>
-            </div>
-
 
             <div class="form-group">
                 <label for="input-pic_url" class="col-sm-2 control-label" min="0">活动配图</label>
@@ -115,7 +110,13 @@
                     <input type="url" name="pic_url" class="form-control" id="input-pic_url" min="0" placeholder="请填入图片链接">
                 </div>
             </div>
-
+        
+            <div class="form-group">
+                <label for="input-description" class="col-sm-2 control-label">活动简介</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" name="description" rows="3" id="input-description" placeholder="描述，如 好看的舞台剧" row="3" style="resize: none;"></textarea>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="input-start-year" class="col-sm-2 control-label">活动开始</label>
                 <div class="form-inline col-sm-10" id="input-start_time">
@@ -200,7 +201,11 @@
                     </div>
                 </div>
             </div>
-
+        </form>
+        </div>
+        </div>
+        <form class="form-horizontal" role="form" method="post" action="{% url "adminpage.views.activity_post" %}" id="activity-form">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="input-total_tickets" class="col-sm-2 control-label">总票数</label>
                 <div class="col-sm-10">

@@ -94,7 +94,14 @@ WEIXIN_CUSTOM_MENU_TEMPLATE = {
         },
         {
             "name": "抢票",
-            "sub_button": []
+            "sub_button": [
+                {
+                    "type": "click",
+                    "name": "setting",
+                    "key": WEIXIN_EVENT_KEYS['ticket_setting'],
+                    "sub_button": []
+                }
+            ]
         }
     ]
 }
